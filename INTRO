@@ -1,0 +1,23 @@
+# One big file storing all metadata vs many small files:
+
+One big file makes your program simple. But every time you modify very tiny amount of metadata ends up causing rewrite of the whole big file.
+
+# SQLite vs text file
+
+sqlite is binary thus not directly human-readable. And git does not handle big binary files very well. And you cannot take advantage of `git diff` to see the difference you make.
+
+
+# Description: Managing local and remote (cloud) files.
+
+# todo list:
+act like file explorer
+store meta info about files like sha256, last modified date, labels, description, downloaded from URL (DownloadURL), webpage URL via which the download was found (WebpageURL), ZIP filename (if this file is originally extracted from some zip), modified after download (boolean), copyright info, etc.
+zip folder or files into a single zip file (or multiple zip files)
+encrypt file(s) with AES
+connect/upload to remote storage like Google Drive/Dropbox/SFTP/webdav/customized file server
+connect/upload to mobile device (which runs an app that receives data. Note this needs to secure connection and verify identity.)
+automatically sync meta info to remote storage/mobile device (if there is conflict, show error and still make a second copy, in other words, keep both, not replacement)
+show list of files (including all files registered in meta info, so that means all files on current machine and other machines)
+detailed info will be shown in list (e.g. for a file with a certian sha256, how many copies are present, on which machines)
+mark deletion (as part of meta info, so the deletion automatically happens when the meta info is synced to the machine containing that file)
+scan/re-scan a whole machine or a part of the filesystem to register/re-register all files. (if huge number of tiny files are found under one folder, it is automatically skipped and listed under special section)

@@ -1,0 +1,29 @@
+[package]
+name = "filelst"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+dropbox-sdk = "*"
+path-clean = "*"
+env_logger = "*"
+log = "*"
+serde = { version = "*", features = ["derive"] }
+serde_json = "*"
+scopeguard = "*"
+dirs = "*"
+rusqlite = { version = "*", features = ["bundled"] }
+reqwest = {version= "*", features = ["blocking"]}
+sha2 = "*"
+base64 = "*"
+chrono = "*"
+crabrs = { git = "https://github.com/cshu/crabrs" }
+crabsqliters = { git = "https://github.com/cshu/crabsqliters" }
+crabdxrs = { git = "https://github.com/cshu/crabdxrs" }
+crabmgraphrs = { git = "https://github.com/cshu/crabmgraphrs" }
+filename-enc = { git = "https://github.com/cshu/filename-enc" }
+
+[profile.release]
+debug = 1
