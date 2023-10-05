@@ -237,7 +237,7 @@ pub fn millis2display(ms: i64) -> String {
         }
         Some(ndt_v) => ndt_v,
     };
-    let datetime: DateTime<Utc> = DateTime::from_utc(naive, Utc);
+    let datetime: DateTime<Utc> = Utc.from_utc_datetime(&naive);
     datetime.to_string()
 }
 
